@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User extends AuditModel {
     private Integer id;
 
     @Column(name = "username")
@@ -37,11 +37,11 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

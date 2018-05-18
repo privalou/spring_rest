@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "violations")
-public class Violation {
+public class Violation extends AuditModel {
 
     private Integer id;
     private Road road;
@@ -46,12 +46,12 @@ public class Violation {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public int getId() {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

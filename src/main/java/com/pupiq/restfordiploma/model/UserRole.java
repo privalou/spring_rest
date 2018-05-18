@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user_role")
-public class UserRole {
+public class UserRole extends AuditModel {
     @Id
     private Integer id;
     @Column(name = "role_name")

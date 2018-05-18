@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "road")
-public class Road {
+public class Road extends AuditModel{
 
     private Integer id;
     @Column(name = "name")
@@ -24,19 +24,19 @@ public class Road {
         this.note = note;
     }
 
-    public Road(int id, String name, String note) {
+    public Road(Integer id, String name, String note) {
         this.id = id;
         this.name = name;
         this.note = note;
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public int getId() {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
