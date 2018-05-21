@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class User extends AuditModel {
+public class User {
     private Integer id;
 
     @Column(name = "username")

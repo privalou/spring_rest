@@ -1,15 +1,11 @@
 package com.pupiq.restfordiploma.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user_role")
-public class UserRole extends AuditModel {
-    @Id
+public class UserRole {
     private Integer id;
     @Column(name = "role_name")
     private String roleName;
@@ -34,7 +30,9 @@ public class UserRole extends AuditModel {
         }
     }
 
-    public int getId() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
         return id;
     }
 

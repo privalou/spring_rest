@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "violations")
-public class Violation extends AuditModel {
+public class Violation {
 
     private Integer id;
     private Road road;

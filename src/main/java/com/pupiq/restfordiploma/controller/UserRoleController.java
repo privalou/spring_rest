@@ -26,7 +26,7 @@ public class UserRoleController {
         return repository.save(userRole);
     }
 
-    @PutMapping("/posts/{roleId}")
+    @PutMapping("/roles/{roleId}")
     public UserRole updateRole(@PathVariable Integer roleId, @Valid @RequestBody UserRole userRoleRequest) {
         return repository.findById(roleId).map(userRole -> {
             userRole.setRoleName(userRoleRequest.getRoleName());
@@ -35,7 +35,7 @@ public class UserRoleController {
     }
 
 
-    @DeleteMapping("/posts/{postId}")
+    @DeleteMapping("/roles/{roleId}")
     public ResponseEntity<?> deletePost(@PathVariable Integer roleId) {
         return repository.findById(roleId).map(userRole -> {
             repository.delete(userRole);
