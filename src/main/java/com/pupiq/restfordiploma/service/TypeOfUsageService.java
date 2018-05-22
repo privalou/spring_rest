@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface TypeOfUsageService {
     List<TypeOfUsage> addTypeOfUsages(List<TypeOfUsage> typeOfUsages);
+    List<TypeOfUsage> getTypeOfUsages();
 }

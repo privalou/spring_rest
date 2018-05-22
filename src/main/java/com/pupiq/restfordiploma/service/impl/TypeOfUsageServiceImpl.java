@@ -18,4 +18,9 @@ public class TypeOfUsageServiceImpl implements TypeOfUsageService {
     public List<TypeOfUsage> addTypeOfUsages(List<TypeOfUsage> typeOfUsages) {
         return repository.saveAll(typeOfUsages);
     }
+
+    @Override
+    public List<TypeOfUsage> getTypeOfUsages() {
+        return repository.findAll();
+    }
 }

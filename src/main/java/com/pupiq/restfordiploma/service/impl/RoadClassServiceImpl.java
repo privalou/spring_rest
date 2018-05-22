@@ -18,4 +18,9 @@ public class RoadClassServiceImpl implements RoadClassService {
     public List<RoadClass> addRoadClasses(List<RoadClass> roadClasses) {
         return repository.saveAll(roadClasses);
     }
+
+    @Override
+    public List<RoadClass> getRoadClasses() {
+        return repository.findAll();
+    }
 }

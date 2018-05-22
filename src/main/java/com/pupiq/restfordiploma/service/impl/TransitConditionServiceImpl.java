@@ -18,4 +18,9 @@ public class TransitConditionServiceImpl implements TransitConditionService {
     public List<TransitCondition> addTransitConditions(List<TransitCondition> transitConditions) {
         return repository.saveAll(transitConditions);
     }
+
+    @Override
+    public List<TransitCondition> getTransitCondition() {
+        return repository.findAll();
+    }
 }

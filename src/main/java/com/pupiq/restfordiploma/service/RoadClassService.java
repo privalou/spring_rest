@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface RoadClassService {
     List<RoadClass> addRoadClasses(List<RoadClass> roadClasses);
+    List<RoadClass> getRoadClasses();
 }
