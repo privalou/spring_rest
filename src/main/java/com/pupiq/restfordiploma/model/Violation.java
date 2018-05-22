@@ -15,12 +15,12 @@ public class Violation {
     private int width;
     private int depth;
     private String status;
-    private byte[] image;
+    private String pathToImage;
 
     public Violation() {
     }
 
-    public Violation(int id, Road road, User user, double latitude, double longitude, int length, int width, int depth, String status, byte[] image) {
+    public Violation(int id, Road road, User user, double latitude, double longitude, int length, int width, int depth, String status, String pathToImage) {
         this.id = id;
         this.road = road;
         this.user = user;
@@ -30,10 +30,10 @@ public class Violation {
         this.width = width;
         this.depth = depth;
         this.status = status;
-        this.image = image;
+        this.pathToImage = pathToImage;
     }
 
-    public Violation(Road road, User user, double latitude, double longitude, int length, int width, int depth, String status, byte[] image) {
+    public Violation(Road road, User user, double latitude, double longitude, int length, int width, int depth, String status, String pathToImage) {
         this.road = road;
         this.user = user;
         this.latitude = latitude;
@@ -42,7 +42,7 @@ public class Violation {
         this.width = width;
         this.depth = depth;
         this.status = status;
-        this.image = image;
+        this.pathToImage = pathToImage;
     }
 
     @Id
@@ -123,12 +123,12 @@ public class Violation {
         this.status = status;
     }
 
-    public byte[] getImage() {
-        return image;
+    public String getPathToImage() {
+        return pathToImage;
     }
 
-    public void setImage(byte[] image) {
-        this.image = image;
+    public void setPathToImage(String pathToImage) {
+        this.pathToImage = pathToImage;
     }
 
     @Override

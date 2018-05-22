@@ -3,7 +3,7 @@ package com.pupiq.restfordiploma.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tansit_condition")
+@Table(name = "transit_condition")
 public class TransitCondition {
     private Integer id;
     @Column(name = "name")
