@@ -1,6 +1,7 @@
 package com.pupiq.restfordiploma.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "type_of_usage")
@@ -9,7 +10,13 @@ public class TypeOfUsage {
     @Column(name = "name")
     private String name;
 
+    private List<Road> roads;
+
     public TypeOfUsage() {
+    }
+
+    public TypeOfUsage(String name) {
+        this.name = name;
     }
 
     @Id
@@ -28,5 +35,14 @@ public class TypeOfUsage {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @OneToMany(mappedBy = "typeOfUsage", fetch = FetchType.LAZY)
+    public List<Road> getRoads() {
+        return roads;
+    }
+
+    public void setRoads(List<Road> roads) {
+        this.roads = roads;
     }
 }

@@ -1,4 +1,7 @@
 package com.pupiq.restfordiploma.repository;
 
-public interface TypeOfUsageRepository {
+import com.pupiq.restfordiploma.model.TypeOfUsage;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TypeOfUsageRepository extends JpaRepository<TypeOfUsage, Integer> {
 }

@@ -13,6 +13,17 @@ public class Road{
     @Column(name = "note")
     private String note;
 
+    private Category category;
+
+    private PropertyType propertyType;
+
+    private RoadClass roadClass;
+
+    private TransitCondition transitCondition;
+
+    private TypeOfUsage typeOfUsage;
+
+
     private List<Violation> violations;
 
 
@@ -63,6 +74,56 @@ public class Road{
 
     public void setViolations(List<Violation> violations) {
         this.violations = violations;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "property_type_id")
+    public PropertyType getPropertyType() {
+        return propertyType;
+    }
+
+    public void setPropertyType(PropertyType propertyType) {
+        this.propertyType = propertyType;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "road_class_id")
+    public RoadClass getRoadClass() {
+        return roadClass;
+    }
+
+    public void setRoadClass(RoadClass roadClass) {
+        this.roadClass = roadClass;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "transit_condition_id")
+    public TransitCondition getTransitCondition() {
+        return transitCondition;
+    }
+
+    public void setTransitCondition(TransitCondition transitCondition) {
+        this.transitCondition = transitCondition;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "type_of_usage_id")
+    public TypeOfUsage getTypeOfUsage() {
+        return typeOfUsage;
+    }
+
+    public void setTypeOfUsage(TypeOfUsage typeOfUsage) {
+        this.typeOfUsage = typeOfUsage;
     }
 
     @Override
