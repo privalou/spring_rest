@@ -20,7 +20,18 @@ public class TransitConditionServiceImpl implements TransitConditionService {
     }
 
     @Override
-    public List<TransitCondition> getTransitCondition() {
+    public List<TransitCondition> getTransitConditions() {
         return repository.findAll();
     }
+
+    @Override
+    public TransitCondition getTransitCondition(int id) {
+        return repository.getOne(id);
+    }
+
+    @Override
+    public TransitCondition getTransitCondition(String name) {
+        return repository.findByName(name);
+    }
+
 }

@@ -35,9 +35,9 @@ public class DictionaryCheckTest {
     private TypeOfUsageService typeOfUsageService;
 
     @Test
-    public void checkAmounts(){
+    public void checkAmounts() {
         List<UserRole> roles = userRoleService.getRoles();
-        Assert.assertEquals(2,roles.size());
+        Assert.assertEquals(2, roles.size());
 
         List<Category> categories = categoryService.getCategories();
         Assert.assertEquals(7, categories.size());
@@ -48,7 +48,7 @@ public class DictionaryCheckTest {
         List<RoadClass> roadClasses = roadClassService.getRoadClasses();
         Assert.assertEquals(4, roadClasses.size());
 
-        List<TransitCondition> transitConditions = transitConditionService.getTransitCondition();
+        List<TransitCondition> transitConditions = transitConditionService.getTransitConditions();
         Assert.assertEquals(3, transitConditions.size());
 
         List<TypeOfUsage> typeOfUsages = typeOfUsageService.getTypeOfUsages();

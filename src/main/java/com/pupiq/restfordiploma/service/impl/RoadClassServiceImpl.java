@@ -23,4 +23,14 @@ public class RoadClassServiceImpl implements RoadClassService {
     public List<RoadClass> getRoadClasses() {
         return repository.findAll();
     }
+
+    @Override
+    public RoadClass getRoadClass(int id) {
+        return repository.getOne(id);
+    }
+
+    @Override
+    public RoadClass getRoadClass(String name) {
+        return repository.findByName(name);
+    }
 }

@@ -30,6 +30,11 @@ public class PropertyTypeServiceImpl implements PropertyTypeService {
     }
 
     @Override
+    public PropertyType getPropertyType(String name) {
+        return repository.findByName(name);
+    }
+
+    @Override
     public List<PropertyType> getPropertyTypes() {
         return repository.findAll();
     }

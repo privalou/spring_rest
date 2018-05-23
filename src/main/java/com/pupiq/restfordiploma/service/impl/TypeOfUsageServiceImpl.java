@@ -23,4 +23,14 @@ public class TypeOfUsageServiceImpl implements TypeOfUsageService {
     public List<TypeOfUsage> getTypeOfUsages() {
         return repository.findAll();
     }
+
+    @Override
+    public TypeOfUsage getTypeOfUsage(int id) {
+        return repository.getOne(id);
+    }
+
+    @Override
+    public TypeOfUsage getTypeOfUsage(String name) {
+        return repository.findByName(name);
+    }
 }

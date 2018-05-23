@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "road")
-public class Road{
+public class Road {
 
     private Integer id;
     @Column(name = "name")

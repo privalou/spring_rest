@@ -10,8 +10,6 @@ public class UserRole {
     @Column(name = "role_name")
     private String roleName;
 
-    private enum Roles {ADMINISTRATOR, USER}
-
     public UserRole() {
     }
 
@@ -55,4 +53,6 @@ public class UserRole {
                 ", roleName='" + roleName + '\'' +
                 '}';
     }
+
+    private enum Roles {ADMINISTRATOR, USER}
 }

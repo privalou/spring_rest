@@ -30,6 +30,11 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    public Category getCategory(String name) {
+        return repository.findByName(name);
+    }
+
+    @Override
     public List<Category> getCategories() {
         return repository.findAll();
     }

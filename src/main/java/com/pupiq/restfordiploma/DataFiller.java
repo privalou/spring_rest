@@ -29,12 +29,15 @@ public class DataFiller implements CommandLineRunner {
     @Resource
     private TypeOfUsageService typeOfUsageService;
 
+    @Resource
+    private RoadService roadService;
+
     @Override
     public void run(String... args) {
         fillData(args);
     }
 
-    private void fillData(String[] args){
+    private void fillData(String[] args) {
         userRoleService.addUserRoles(Arrays.asList(new UserRole(1),
                 new UserRole(2)));
         categoryService.addCategories(Arrays.asList(new Category("IА"),
@@ -58,6 +61,14 @@ public class DataFiller implements CommandLineRunner {
                 new TransitCondition("Дорога обычного типа")));
         typeOfUsageService.addTypeOfUsages(Arrays.asList(new TypeOfUsage("Общего пользования"),
                 new TypeOfUsage("Необщего пользования")));
-
+        Road road = new Road();
+        road.setName("M5");
+        road.setNote("Test");
+        road.setCategory(categoryService.getCategory("IА"));
+        road.setPropertyType(propertyTypeService.getPropertyType("Федеральная"));
+        road.setRoadClass(roadClassService.getRoadClass("Автомобильные дороги федерального значения"));
+        road.setTransitCondition(transitConditionService.getTransitCondition("Автомагистраль"));
+        road.setTypeOfUsage(typeOfUsageService.getTypeOfUsage("Общего пользования"));
+        roadService.addRoad(road);
     }
 }

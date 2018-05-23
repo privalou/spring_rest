@@ -78,7 +78,7 @@ public class User {
     }
 
     @ManyToOne
-    @JoinColumn(name="user_role_id")
+    @JoinColumn(name = "user_role_id")
     public UserRole getUserRole() {
         return userRole;
     }
@@ -87,7 +87,7 @@ public class User {
         this.userRole = userRole;
     }
 
-    @OneToMany(mappedBy ="user")
+    @OneToMany(mappedBy = "user")
     public List<Violation> getViolations() {
         return violations;
     }

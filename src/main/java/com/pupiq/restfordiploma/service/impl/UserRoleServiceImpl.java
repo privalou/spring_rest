@@ -4,9 +4,12 @@ import com.pupiq.restfordiploma.model.UserRole;
 import com.pupiq.restfordiploma.repository.UserRoleRepository;
 import com.pupiq.restfordiploma.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserRoleServiceImpl implements UserRoleService {
@@ -30,7 +33,23 @@ public class UserRoleServiceImpl implements UserRoleService {
     }
 
     @Override
+    public Optional<UserRole> getOptionalUserRole(int id) {
+        return repository.findById(id);
+    }
+
+
+    @Override
     public List<UserRole> getRoles() {
         return repository.findAll();
+    }
+
+    @Override
+    public Page<UserRole> getRoles(Pageable pageable) {
+        return repository.findAll(pageable);
+    }
+
+    @Override
+    public void deleteRole(int id) {
+        repository.deleteById(id);
     }
 }
