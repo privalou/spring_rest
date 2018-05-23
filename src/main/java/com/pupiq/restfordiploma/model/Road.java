@@ -23,6 +23,7 @@ public class Road {
 
     private TypeOfUsage typeOfUsage;
 
+    private Organisation organisation;
 
     private List<Violation> violations;
 
@@ -124,6 +125,16 @@ public class Road {
 
     public void setTypeOfUsage(TypeOfUsage typeOfUsage) {
         this.typeOfUsage = typeOfUsage;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "organisation")
+    public Organisation getOrganisation() {
+        return organisation;
+    }
+
+    public void setOrganisation(Organisation organisation) {
+        this.organisation = organisation;
     }
 
     @Override

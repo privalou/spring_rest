@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
+import java.util.Collections;
 
 @Component
 public class DataFiller implements CommandLineRunner {
@@ -31,6 +32,9 @@ public class DataFiller implements CommandLineRunner {
 
     @Resource
     private RoadService roadService;
+
+    @Resource
+    private OrganisationService organisationService;
 
     @Override
     public void run(String... args) {
@@ -61,6 +65,11 @@ public class DataFiller implements CommandLineRunner {
                 new TransitCondition("Дорога обычного типа")));
         typeOfUsageService.addTypeOfUsages(Arrays.asList(new TypeOfUsage("Общего пользования"),
                 new TypeOfUsage("Необщего пользования")));
+
+        Organisation organisation = new Organisation();
+        organisation.setName("Росавтодор");
+        organisation.setLegallAddress("Москва, ул. Бочкова, д. 4");
+
         Road road = new Road();
         road.setName("M5");
         road.setNote("Test");
@@ -69,6 +78,9 @@ public class DataFiller implements CommandLineRunner {
         road.setRoadClass(roadClassService.getRoadClass("Автомобильные дороги федерального значения"));
         road.setTransitCondition(transitConditionService.getTransitCondition("Автомагистраль"));
         road.setTypeOfUsage(typeOfUsageService.getTypeOfUsage("Общего пользования"));
+        organisation.setRoads(Collections.singletonList(road));
+        road.setOrganisation(organisation);
+        organisationService.addOrganisation(organisation);
         roadService.addRoad(road);
     }
 }

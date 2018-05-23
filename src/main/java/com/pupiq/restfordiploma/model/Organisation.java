@@ -1,6 +1,7 @@
 package com.pupiq.restfordiploma.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "organisation")
@@ -11,8 +12,16 @@ public class Organisation {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "physical_address")
+    private String physicalAddress;
+
+    @Column(name = "legal_address")
+    private String legallAddress;
+
+    @Column(name = "phone")
+    private String phone;
+
+    private List<Road> roads;
 
     public Organisation() {
     }
@@ -35,11 +44,36 @@ public class Organisation {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getPhysicalAddress() {
+        return physicalAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPhysicalAddress(String physicalAddress) {
+        this.physicalAddress = physicalAddress;
+    }
+
+    public String getLegallAddress() {
+        return legallAddress;
+    }
+
+    public void setLegallAddress(String legallAddress) {
+        this.legallAddress = legallAddress;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    @OneToMany(mappedBy = "organisation", fetch = FetchType.LAZY)
+    public List<Road> getRoads() {
+        return roads;
+    }
+
+    public void setRoads(List<Road> roads) {
+        this.roads = roads;
     }
 }
