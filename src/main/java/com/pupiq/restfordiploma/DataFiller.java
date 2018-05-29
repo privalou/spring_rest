@@ -36,6 +36,9 @@ public class DataFiller implements CommandLineRunner {
     @Resource
     private OrganisationService organisationService;
 
+    @Resource
+    private ViolationService violationService;
+
     @Override
     public void run(String... args) {
         fillData(args);
@@ -80,7 +83,17 @@ public class DataFiller implements CommandLineRunner {
         road.setTypeOfUsage(typeOfUsageService.getTypeOfUsage("Общего пользования"));
         organisation.setRoads(Collections.singletonList(road));
         road.setOrganisation(organisation);
+        Violation violation = new Violation();
+        violation.setDepth(10);
+        violation.setLength(50);
+        violation.setWidth(90);
+        violation.setLatitude(50D);
+        violation.setLongitude(55D);
+        violation.setStatus("reviewed");
+        violation.setRoad(road);
+        road.setViolations(Collections.singletonList(violation));
         organisationService.addOrganisation(organisation);
         roadService.addRoad(road);
+        violationService.addViolation(violation);
     }
 }

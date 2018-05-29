@@ -87,7 +87,7 @@ public class User {
         this.userRole = userRole;
     }
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     public List<Violation> getViolations() {
         return violations;
     }

@@ -1,5 +1,7 @@
 package com.pupiq.restfordiploma.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,6 +12,7 @@ public class Category {
     @Column(name = "name")
     private String name;
 
+    @JsonIgnore
     private List<Road> roads;
 
     public Category() {

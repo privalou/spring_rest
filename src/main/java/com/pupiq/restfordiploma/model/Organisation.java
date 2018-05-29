@@ -1,5 +1,7 @@
 package com.pupiq.restfordiploma.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,6 +23,7 @@ public class Organisation {
     @Column(name = "phone")
     private String phone;
 
+    @JsonIgnore
     private List<Road> roads;
 
     public Organisation() {

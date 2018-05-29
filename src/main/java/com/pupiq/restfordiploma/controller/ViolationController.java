@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 public class ViolationController {
@@ -15,8 +16,8 @@ public class ViolationController {
     ViolationService service;
 
     @GetMapping("/violations")
-    public Page<Violation> getAllRoles(Pageable pageable) {
+    public List<Violation> getAllRoles() {
         //TODO: finish get and post methods for violations and also time to finish road owners
-        return service.getViolations(pageable);
+        return service.getViolations();
     }
 }

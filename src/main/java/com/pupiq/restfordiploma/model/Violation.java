@@ -135,7 +135,7 @@ public class Violation {
     public String toString() {
         return "Violation{" +
                 "id=" + id +
-                ", road=" + road +
+                ", road=" + road.getId() +
                 ", user=" + user.getUsername() +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +

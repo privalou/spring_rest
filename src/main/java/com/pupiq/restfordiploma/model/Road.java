@@ -1,5 +1,7 @@
 package com.pupiq.restfordiploma.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -25,6 +27,7 @@ public class Road {
 
     private Organisation organisation;
 
+    @JsonIgnore
     private List<Violation> violations;
 
 
